@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bus Pass Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" id="home-link">Home</a></li>
+                <li><a href="#login" id="login-link">Login</a></li>
+                <li><a href="#signup" id="signup-link">Profile</a></li>
+                <li><a href="#profile" id="profile-link">Update</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <h2>Welcome to the Bus Pass Management System</h2>
+            <p>Manage your bus passes easily and efficiently.</p>
+        </section>
+
+        <section id="login" class="section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-name">Name:</label>
+                <input type="text" id="login-name" name="login-name" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="signup" class="section">
+            <h2>Your Details</h2>
+            <form id="profile-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="usn">USN:</label>
+                <input type="text" id="usn" name="usn" required>
+                <label for="semester">Semester:</label>
+                <input type="text" id="semester" name="semester" required>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="route-number">Route Number:</label>
+                <input type="text" id="route-number" name="route-number" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+
+        <section id="profile" class="section">
+            <h2>Update</h2>
+            <form id="update-form">
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+                <label for="receipt">Upload Bus Fee Receipt:</label>
+                <input type="file" id="receipt" name="receipt" accept="application/pdf">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
