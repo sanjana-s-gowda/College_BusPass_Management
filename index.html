@@ -5,75 +5,384 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Pass Management</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Include your CSS here or link to an external stylesheet */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FFD700; /* Yellow color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333; /* Black color for header links */
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            text-decoration: underline;
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        aside {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        aside img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #FFD700; /* Yellow color for section titles */
+            font-size: 24px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .highlight {
+            color: #ff5733;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input {
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        form button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        .home-content {
+            display: flex;
+        }
+
+        .home-content aside {
+            flex: 1;
+        }
+
+        .home-content .paragraph {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .home-content .paragraph p {
+            margin: 10px 0;
+        }
+
+        .routes {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .routes button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .routes button:hover {
+            background-color: #0056b3;
+        }
+
+        .pdf-viewer {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pdf-viewer iframe {
+            width: 80%;
+            height: 500px;
+            border: none;
+        }
+
+        .back-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>GSSS Institute of Engineering and Technology for Women</h1>
         <nav>
             <ul>
-                <li><a href="#home" id="home-link">Home</a></li>
+                <li><a href="#home" id="home-link" class="active">Home</a></li>
                 <li><a href="#login" id="login-link">Login</a></li>
                 <li><a href="#profile" id="profile-link">Profile</a></li>
                 <li><a href="#upload" id="upload-link">Upload</a></li>
+                <li><a href="#routes" id="routes-link">Bus Routes</a></li> <!-- Moved "Bus Routes" link here -->
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="section active">
-            <h2>About</h2>
-            <p>Easily manage your bus passes and travel arrangements.</p>
-			<aside>
-				<img src="bus_image.jpg" alt="College Bus" id="bus-image">
-			</aside>
-        </section>
+        <div class="content">
+            <section id="home" class="section active">
+                <div class="home-content">
+                    <aside>
+                        <img src="assets/bus_image.jpg" alt="College Bus" id="bus-image">
+                    </aside>
+                    <div class="paragraph">
+                        <h2>About</h2>
+                        <p>Our bus service ensures <span class="highlight">safe</span> and <span class="highlight">reliable</span> transportation for students.</p>
+                        <p>With multiple routes covering extensive areas, our buses are designed to make commuting <span class="highlight">convenient</span> and <span class="highlight">comfortable</span>.</p>
+                        <p>Each bus is equipped with modern amenities, including air conditioning and comfortable seating.</p>
+                        <p>We prioritize <span class="highlight">punctuality</span> and <span class="highlight">safety</span>, with trained drivers and regular maintenance checks.</p>
+                        <p>Our goal is to provide a hassle-free transportation experience, ensuring you reach your destination on time.</p>
+                    </div>
+                </div>
+            </section>
 
-        
+            <section id="login" class="section">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <label for="login-name">Name:</label>
+                    <input type="text" id="login-name" name="login-name" required>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
 
-        <section id="login" class="section">
-            <h2>Login</h2>
-            <form id="login-form">
-                <label for="login-name">Name:</label>
-                <input type="text" id="login-name" name="login-name" required>
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="login-password" required>
-                <button type="submit">Login</button>
-            </form>
-        </section>
+            <section id="profile" class="section">
+                <h2>Your Details</h2>
+                <form id="profile-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="usn">USN:</label>
+                    <input type="text" id="usn" name="usn" required>
+                    <label for="semester">Semester:</label>
+                    <input type="text" id="semester" name="semester" required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="route-number">Route Number:</label>
+                    <input type="text" id="route-number" name="route-number" required>
+                    <button type="submit">Done</button>
+                </form>
+            </section>
 
-        <section id="profile" class="section">
-            <h2>Your Details</h2>
-            <form id="profile-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="usn">USN:</label>
-                <input type="text" id="usn" name="usn" required>
-                <label for="semester">Semester:</label>
-                <input type="text" id="semester" name="semester" required>
-                <label for="phone">Phone Number:</label>
-                <input type="text" id="phone" name="phone" required>
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
-                <label for="route-number">Route Number:</label>
-                <input type="text" id="route-number" name="route-number" required>
-                <button type="submit">Done</button>
-            </form>
-        </section>
+            <section id="upload" class="section">
+                <h2>Upload Details</h2>
+                <form id="update-form">
+                    <label for="photo">Upload Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    <div id="photo-preview"></div>
+                    <label for="receipt">Upload Bus Fee Receipt:</label>
+                    <input type="file" id="receipt" name="receipt" accept="application/pdf">
+                    <div id="receipt-preview"></div>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
 
-        <section id="upload" class="section">
-            <h2>Upload Details</h2>
-            <form id="update-form">
-                <label for="photo">Upload Photo:</label>
-                <input type="file" id="photo" name="photo" accept="image/*">
-                <label for="receipt">Upload Bus Fee Receipt:</label>
-                <input type="file" id="receipt" name="receipt" accept="application/pdf">
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+            <section id="routes" class="section routes">
+                <h2>Bus Routes</h2>
+                <div id="route-buttons"></div>
+            </section>
+
+            <section id="route-pdf" class="section">
+                <div class="pdf-viewer">
+                    <iframe id="pdf-frame" src="" type="application/pdf"></iframe>
+                </div>
+                <button class="back-button" id="back-button">Back</button>
+            </section>
+        </div>
     </main>
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const backButton = document.getElementById('back-button');
+            let historyStack = [];
 
-    <script src="scripts.js"></script>
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sections.forEach(section => section.classList.remove('active'));
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+
+                    const targetId = link.getAttribute('href').substring(1);
+                    document.getElementById(targetId).classList.add('active');
+                    link.classList.add('active');
+
+                    historyStack.push(targetId);
+
+                    if (targetId === 'routes') {
+                        loadRouteButtons();
+                    }
+                });
+            });
+
+            backButton.addEventListener('click', () => {
+                if (historyStack.length > 1) {
+                    historyStack.pop(); // Remove current view
+                    const previousView = historyStack.pop(); // Get previous view
+                    navigateToSection(previousView);
+                }
+            });
+
+            const photoInput = document.getElementById('photo');
+            const photoPreview = document.getElementById('photo-preview');
+            const receiptInput = document.getElementById('receipt');
+            const receiptPreview = document.getElementById('receipt-preview');
+
+            photoInput.addEventListener('change', () => {
+                displayImagePreview(photoInput, photoPreview);
+            });
+
+            receiptInput.addEventListener('change', () => {
+                displayFilePreview(receiptInput, receiptPreview);
+            });
+
+            function loadRouteButtons() {
+                const routeButtonsContainer = document.getElementById('route-buttons');
+                routeButtonsContainer.innerHTML = ''; // Clear existing buttons
+
+                for (let i = 1; i <= 10; i++) {
+                    const button = document.createElement('button');
+                    button.textContent = `Route ${i}`;
+                    button.addEventListener('click', () => {
+                        showRoutePdf(i);
+                    });
+                    routeButtonsContainer.appendChild(button);
+                }
+            }
+
+            function displayImagePreview(input, previewContainer) {
+                previewContainer.innerHTML = '';
+                const file = input.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.style.maxWidth = '200px';
+                        img.style.borderRadius = '10px';
+                        previewContainer.appendChild(img);
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            function displayFilePreview(input, previewContainer) {
+                previewContainer.innerHTML = '';
+                const file = input.files[0];
+                if (file) {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(file);
+                    link.textContent = 'View uploaded receipt';
+                    link.target = '_blank';
+                    previewContainer.appendChild(link);
+                }
+            }
+
+            function showRoutePdf(routeNumber) {
+                const pdfViewer = document.querySelector('.pdf-viewer');
+                const pdfFrame = document.getElementById('pdf-frame');
+                pdfFrame.src = `bus/routes/route${routeNumber}.pdf`; // Update the path as necessary
+                pdfViewer.style.display = 'block';
+
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                pdfViewer.parentElement.classList.add('active');
+
+                historyStack.push('route-pdf'); // Add route-pdf to history
+                backButton.style.display = 'block';
+            }
+
+            function navigateToSection(sectionId) {
+                sections.forEach(section => section.classList.remove('active'));
+                document.getElementById(sectionId).classList.add('active');
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                const activeLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
+                if (activeLink) activeLink.classList.add('active');
+
+                if (sectionId !== 'route-pdf') {
+                    backButton.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
