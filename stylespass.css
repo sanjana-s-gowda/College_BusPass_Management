@@ -1,0 +1,64 @@
+.bus-pass {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.bus-pass h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bus-pass p {
+    margin: 10px 0;
+}
+
+.bus-pass .btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.bus-pass .btn:hover {
+    background-color: #0056b3;
+}
+
+.bus-pass {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.bus-pass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bus-pass-header h1 {
+    margin: 0;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+}
+
