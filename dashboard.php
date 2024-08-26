@@ -80,16 +80,15 @@ $profile = $result->fetch_assoc();
 
                     <input type="submit" value="Save Profile" class="btn">
 					
-					<label for="profile_picture">Profile Picture:</label>
-                    <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+					>
 
 					
                 </form>
             <?php endif; ?>
 
             <!-- Add Next button -->
-            <a href="next_page.php?username=<?php echo $user; ?>" class="btn">Next</a>
-			<a href="generate_pass.php?username=<?php echo $user; ?>" class="btn">Generate Bus Pass</a>
+            
+	<a href="generate_pass.php?username=<?php echo $user; ?>" class="btn">Generate Bus Pass</a>
 
         </div>
     </div>
