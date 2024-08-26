@@ -44,6 +44,7 @@ $conn->close();
             <p>No profile found. Please create a profile first.</p>
         <?php endif; ?>
         <a href="dashboard.php?username=<?php echo $user; ?>" class="btn">Back to Dashboard</a>
+        <a href="generate_pdf.php?username=<?php echo $user; ?>" class="btn">Download Bus Pass</a>
     </div>
 </body>
 </html>
